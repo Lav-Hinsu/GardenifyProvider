@@ -9,10 +9,10 @@ public class User {
         this.name=name;
         this.password=password;
     }
-    String getName(){
+    public String getName(){
         return name;
     }
-    String getPass(){
+    public String getPass(){
         return password;
     }
 
