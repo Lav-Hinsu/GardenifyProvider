@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "422288631450",
+    "firebase_url": "https://gardenifycustomer.firebaseio.com",
+    "project_id": "gardenifycustomer",
+    "storage_bucket": "gardenifycustomer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422288631450:android:d1230739fbe26392",
+        "android_client_info": {
+          "package_name": "com.example.lak.gardenifycustomer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422288631450-cgc0po9ce6a2qbopcdhji55bb2tk45o3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lak.gardenifycustomer",
+            "certificate_hash": "949af333bdc1e4c62f22d72571e6c5b35f173d81"
+          }
+        },
+        {
+          "client_id": "422288631450-5ff3g36mimosip97bj99d0m7a52rbqhh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXYF-cFI9RdO41Vcz84HcqZ6S3kp9YRMY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422288631450-5ff3g36mimosip97bj99d0m7a52rbqhh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422288631450:android:0bef04c26db9e2d9",
+        "android_client_info": {
+          "package_name": "com.example.lav.gardenifyprovider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422288631450-re647b4r14i55uq31dftvhcb2fi2t0fd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lav.gardenifyprovider",
+            "certificate_hash": "eb6c1b7b22643c706bf1332539d5a85ca904f59b"
+          }
+        },
+        {
+          "client_id": "422288631450-5ff3g36mimosip97bj99d0m7a52rbqhh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXYF-cFI9RdO41Vcz84HcqZ6S3kp9YRMY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422288631450-5ff3g36mimosip97bj99d0m7a52rbqhh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
