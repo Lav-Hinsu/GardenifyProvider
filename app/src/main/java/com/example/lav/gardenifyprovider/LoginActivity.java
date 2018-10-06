@@ -3,8 +3,10 @@ package com.example.lav.gardenifyprovider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,38 +24,49 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         namebox = findViewById(R.id.name);
         passwordbox = findViewById(R.id.Password);
-        button = findViewById(R.id.Login);
-        mdatabase= FirebaseDatabase.getInstance().getReference().child("Customer");
-        try {
+        button = findViewById(R.id.loginbutton);
+        //mdatabase= FirebaseDatabase.getInstance().getReference().child("Customer").child("Lak");
 
-            String name = namebox.getText().toString();
-            String password = passwordbox.getText().toString();
-            User user = new User();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
 
-            user.set(name, password);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        // Read from the database
-        try {
-            mdatabase.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    // This method is called once with the initial value and again
-                    // whenever data at this location is updated.
-                    String value = dataSnapshot.getValue(String.class);
-                    Log.d("Value", "Value is: " + value);
+                    String name = namebox.getText().toString();
+                    final String password = passwordbox.getText().toString();
+                    mdatabase= FirebaseDatabase.getInstance().getReference().child("Customer").child(name);
+                    // Read from the database
+                    mdatabase.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            // This method is called once with the initial value and again
+                            // whenever data at this location is updated.
+                            //String value = dataSnapshot.getValue(String.class);
+                            User user=dataSnapshot.getValue(User.class);
+                            Log.d("Value", "Name is: " + user.getName()+"Pass is:"+user.getPass());
+                            if(!password.equals(""+user.getPass())){
+                                Toast.makeText(getApplicationContext(),"Invalid Pass",Toast.LENGTH_SHORT).show();
+                            }
+                            else
+                            {
+                                Toast.makeText(getApplicationContext(),"Succesful",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError error) {
+                            // Failed to read value
+                            Log.w("Value", "Failed to read value.", error.toException());
+                        }
+                    });
+                }catch(Exception e)
+                {
+                    Log.d("Value",""+e.getMessage());
+                    Toast.makeText(getApplicationContext(),"Something went ",Toast.LENGTH_SHORT).show();
                 }
 
-                @Override
-                public void onCancelled(DatabaseError error) {
-                    // Failed to read value
-                    Log.w("Value", "Failed to read value.", error.toException());
-                }
-            });
-        }catch(Exception e)
-        {
-            Log.d("Value",""+e.getMessage());
-        }
+            }
+        });
+
     }
 }
