@@ -18,12 +18,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText namebox,passwordbox;
+    EditText namebox,passwordbox,citybox;
     Button button;
     DatabaseReference mdatabase;
     SharedPreferences sharedPreferences;
     final String myprefs="UserPrefs";
     final String key="Name";
+    final String key2="City";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         namebox = findViewById(R.id.name);
         passwordbox = findViewById(R.id.Password);
+        citybox=findViewById(R.id.logincity);
         button = findViewById(R.id.loginbutton);
         //mdatabase= FirebaseDatabase.getInstance().getReference().child("Customer").child("Lak");
         sharedPreferences=getSharedPreferences(myprefs, Context.MODE_PRIVATE);
@@ -42,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     final String name = namebox.getText().toString();
                     final String password = passwordbox.getText().toString();
+                    final String city= citybox.getText().toString();
                     mdatabase= FirebaseDatabase.getInstance().getReference().child("ANAND").child("PROVIDER").child(name);
                     // Read from the database
                     mdatabase.addValueEventListener(new ValueEventListener() {
@@ -59,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                             {
                                 SharedPreferences.Editor data=sharedPreferences.edit();
                                 data.putString(key,name);
+                                data.putString(key2,city);
                                 data.commit();
                                 Toast.makeText(getApplicationContext(),"Successful",Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(),LaunchActivity.class);
@@ -81,6 +86,15 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(),LaunchActivity.class);
+        startActivity(intent);
+        finish();
 
     }
 }

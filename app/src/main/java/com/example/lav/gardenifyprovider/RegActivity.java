@@ -20,6 +20,7 @@ public class RegActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     final String myprefs="UserPrefs";
     final String key="Name";
+    final String key2="City";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class RegActivity extends AppCompatActivity {
                 {
                     SharedPreferences.Editor data=sharedPreferences.edit();
                     data.putString(key,name);
+                    data.putString(key2,city);
                     data.commit();
                     mdatabase= FirebaseDatabase.getInstance().getReference();
                     User user = new User();
@@ -69,6 +71,14 @@ public class RegActivity extends AppCompatActivity {
                 }
             }
         });
+
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(),LaunchActivity.class);
+        startActivity(intent);
+        finish();
 
     }
 
