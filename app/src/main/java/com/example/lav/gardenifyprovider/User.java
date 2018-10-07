@@ -19,7 +19,7 @@ public class User {
         this.city=city;
         this.mobileno=mobileno;
         skills = new ArrayList<>();
-        skills.add("MySkills");
+        skills.add("\t Current Skills:-");
         //skills.add("test1");
     }
     public String getName(){
