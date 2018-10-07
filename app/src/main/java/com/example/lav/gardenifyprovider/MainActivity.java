@@ -88,6 +88,9 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
             startActivity(intent);
 
+        } else if (id == R.id.myskills){
+            Intent intent = new Intent(getApplicationContext(),myskills.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

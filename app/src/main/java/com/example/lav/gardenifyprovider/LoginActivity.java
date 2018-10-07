@@ -1,5 +1,8 @@
 package com.example.lav.gardenifyprovider;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +21,10 @@ public class LoginActivity extends AppCompatActivity {
     EditText namebox,passwordbox;
     Button button;
     DatabaseReference mdatabase;
+    SharedPreferences sharedPreferences;
+    final String myprefs="UserPrefs";
+    final String key="Name";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,15 +33,16 @@ public class LoginActivity extends AppCompatActivity {
         passwordbox = findViewById(R.id.Password);
         button = findViewById(R.id.loginbutton);
         //mdatabase= FirebaseDatabase.getInstance().getReference().child("Customer").child("Lak");
+        sharedPreferences=getSharedPreferences(myprefs, Context.MODE_PRIVATE);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
 
-                    String name = namebox.getText().toString();
+                    final String name = namebox.getText().toString();
                     final String password = passwordbox.getText().toString();
-                    mdatabase= FirebaseDatabase.getInstance().getReference().child("Customer").child(name);
+                    mdatabase= FirebaseDatabase.getInstance().getReference().child("ANAND").child("PROVIDER").child(name);
                     // Read from the database
                     mdatabase.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -49,7 +57,13 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             else
                             {
+                                SharedPreferences.Editor data=sharedPreferences.edit();
+                                data.putString(key,name);
+                                data.commit();
                                 Toast.makeText(getApplicationContext(),"Successful",Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(),LaunchActivity.class);
+                                startActivity(intent);
+                                finish();
                             }
                         }
 
