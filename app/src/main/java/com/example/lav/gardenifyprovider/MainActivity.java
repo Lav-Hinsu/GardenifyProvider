@@ -82,7 +82,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.Register) {
-            // Handle the camera action
+            Intent intent= new Intent(getApplicationContext(),RegActivity.class);
+            startActivity(intent);
         } else if (id == R.id.Login) {
             Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
             startActivity(intent);

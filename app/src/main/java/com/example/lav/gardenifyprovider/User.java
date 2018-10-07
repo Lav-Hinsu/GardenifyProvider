@@ -4,6 +4,8 @@ public class User {
     String name;
     String password;
 
+
+
     void set(String name,String password)
     {
         this.name=name;
@@ -12,7 +14,7 @@ public class User {
     public String getName(){
         return name;
     }
-    public String getPass(){
+    public String getPassword(){
         return password;
     }
 

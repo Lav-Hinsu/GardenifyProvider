@@ -43,13 +43,13 @@ public class LoginActivity extends AppCompatActivity {
                             // whenever data at this location is updated.
                             //String value = dataSnapshot.getValue(String.class);
                             User user=dataSnapshot.getValue(User.class);
-                            Log.d("Value", "Name is: " + user.getName()+"Pass is:"+user.getPass());
-                            if(!password.equals(""+user.getPass())){
+                            Log.d("Value", "Name is: " + user.getName()+"Pass is:"+user.getPassword());
+                            if(!password.equals(""+user.getPassword())){
                                 Toast.makeText(getApplicationContext(),"Invalid Pass",Toast.LENGTH_SHORT).show();
                             }
                             else
                             {
-                                Toast.makeText(getApplicationContext(),"Succesful",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"Successful",Toast.LENGTH_SHORT).show();
                             }
                         }
 
@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                 }catch(Exception e)
                 {
                     Log.d("Value",""+e.getMessage());
-                    Toast.makeText(getApplicationContext(),"Something went ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Something went Wrong!",Toast.LENGTH_SHORT).show();
                 }
 
             }
