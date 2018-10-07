@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AddSkill extends AppCompatActivity {
     TextView textView;
-    EditText skillentry;
+    EditText skillentry,pricebox;
     RadioGroup duration;
     RadioButton selected;
     Button addbutton;
@@ -45,6 +45,7 @@ public class AddSkill extends AppCompatActivity {
         skillentry= findViewById(R.id.addskill);
         sharedPreferences=getSharedPreferences(myprefs, Context.MODE_PRIVATE);
 
+        pricebox=findViewById(R.id.priceentry);
 
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,12 +56,13 @@ public class AddSkill extends AppCompatActivity {
                 final String skill=skillentry.getText().toString();
 
 
+
                 sharedPreferences=getSharedPreferences(myprefs, Context.MODE_PRIVATE);
                 final String name1=sharedPreferences.getString(key,"");
                 final String city=sharedPreferences.getString(key2,"");
 
                 mdatabase= FirebaseDatabase.getInstance().getReference().child(city.toUpperCase()).child("PROVIDER").child(name1);
-                mdatabase2=FirebaseDatabase.getInstance().getReference().child(city.toUpperCase()).child("SERVICES").child(skill.toUpperCase()).child(duration.toUpperCase());
+                mdatabase2=FirebaseDatabase.getInstance().getReference().child(city.toUpperCase()).child("SERVICES").child(duration.toUpperCase()).child(skill.toUpperCase());
                 mdatabase.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -68,7 +70,7 @@ public class AddSkill extends AppCompatActivity {
                         user = dataSnapshot.getValue(User.class);
                         user.addskills(skill+":"+duration);
                         update(mdatabase,user);
-                        mdatabase2.push().setValue(name1);
+                        mdatabase2.push().setValue(name1+":"+pricebox.getText().toString());
 
                     }
 
