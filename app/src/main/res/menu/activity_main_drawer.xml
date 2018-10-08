@@ -4,19 +4,27 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
+        <!--<item
             android:id="@+id/Register"
             android:title="Register" />
         <item
             android:id="@+id/Login"
-            android:title="Login" />
+            android:title="Login" />-->
         <item
             android:id="@+id/myskills"
-            android:title="MySkills" />
+            android:title="My Skills" />
+        <item
+            android:id="@+id/pendingordersmenu"
+            android:title="Pending Orders"/>
+        <item
+            android:id="@+id/confirmedordersmenu"
+            android:title="Confirmed Orders"/>
+        <item
+            android:id="@+id/declinedordesmenu"
+            android:title="Declined Orders"/>
         <item
             android:id="@+id/logout"
-            android:title="LogOut"/>
-
+            android:title="Log Out"/>
         <!--<item
             android:id="@+id/nav_slideshow"
             android:title="Slideshow" />

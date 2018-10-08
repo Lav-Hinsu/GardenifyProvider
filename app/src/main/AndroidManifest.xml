@@ -25,7 +25,11 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddSkill"></activity>
+        <activity android:name=".AddSkill" />
+        <activity android:name=".PendingOrders" />
+        <activity android:name=".OrderConfirm" />
+        <activity android:name=".ConfirmedOrders" />
+        <activity android:name=".DeclinedOrders"></activity>
     </application>
 
 </manifest>

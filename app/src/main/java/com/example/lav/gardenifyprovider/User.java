@@ -12,6 +12,14 @@ public class User {
     ArrayList<String> skills;
     ArrayList<String> pendingorder;
     ArrayList<String> confirmorder;
+    ArrayList<String> declineorder;
+    User()
+    {
+        declineorder=new ArrayList<>();
+        confirmorder=new ArrayList<>();
+        pendingorder=new ArrayList<>();
+        skills=new ArrayList<>();
+    }
 
     void set(String name,String password,String address1,String city,String mobileno)
     {
@@ -21,11 +29,11 @@ public class User {
         this.city=city;
         this.mobileno=mobileno;
         skills = new ArrayList<>();
-        skills.add("\t Current Skills:-");
+       // skills.add("\tCurrent Skills:-");
         pendingorder = new ArrayList<>();
-        pendingorder.add("\t Current Skills:-");
+       // pendingorder.add("\tPending Orders:-");
         confirmorder = new ArrayList<>();
-        confirmorder.add("\t Current Skills:-");
+       // confirmorder.add("\tConfirmed Orders:-");
         //skills.add("test1");
     }
     public String getName(){
@@ -56,7 +64,29 @@ public class User {
         return confirmorder;
     }
 
+    public ArrayList<String> getDeclineorder() {
+        return declineorder;
+    }
+
     public ArrayList<String> getPendingorder() {
         return pendingorder;
     }
+    void addpendingorder(String pendingorder)
+    {
+        this.pendingorder.add(pendingorder);
+    }
+    void addconfirmorder(String confirmorder)
+    {
+        this.confirmorder.add(confirmorder);
+    }
+    public void removependingorder(String order){
+        pendingorder.remove(order);
+    }
+    public void adddeclineorder(String order)
+    {
+        declineorder.add(order);
+    }
+
+
 }
+

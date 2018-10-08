@@ -90,17 +90,12 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.Register) {
-            Intent intent= new Intent(getApplicationContext(),RegActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.Login) {
-            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
-            startActivity(intent);
 
-        } else if (id == R.id.myskills){
+        if (id == R.id.myskills)
+        {
             Intent intent = new Intent(getApplicationContext(),myskills.class);
             startActivity(intent);
-        } else if (id == R.id.logout)
+        } else if(id == R.id.logout)
         {
             new AlertDialog.Builder(this)
                     .setTitle("LogOut")
@@ -117,6 +112,18 @@ public class MainActivity extends AppCompatActivity
                             Toast.makeText(MainActivity.this, "logged out", Toast.LENGTH_SHORT).show();
                         }})
                     .setNegativeButton(android.R.string.no, null).show();
+        } else if (id == R.id.pendingordersmenu)
+        {
+            Intent intent = new Intent(getApplicationContext(),PendingOrders.class);
+            startActivity(intent);
+        }else if (id== R.id.confirmedordersmenu)
+        {
+            Intent intent = new Intent(getApplicationContext(),ConfirmedOrders.class);
+            startActivity(intent);
+        }else if (id== R.id.declinedordesmenu)
+        {
+            Intent intent = new Intent(getApplicationContext(),DeclinedOrders.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
