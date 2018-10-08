@@ -10,6 +10,8 @@ public class User {
     String city;
     String mobileno;
     ArrayList<String> skills;
+    ArrayList<String> pendingorder;
+    ArrayList<String> confirmorder;
 
     void set(String name,String password,String address1,String city,String mobileno)
     {
@@ -20,6 +22,10 @@ public class User {
         this.mobileno=mobileno;
         skills = new ArrayList<>();
         skills.add("\t Current Skills:-");
+        pendingorder = new ArrayList<>();
+        pendingorder.add("\t Current Skills:-");
+        confirmorder = new ArrayList<>();
+        confirmorder.add("\t Current Skills:-");
         //skills.add("test1");
     }
     public String getName(){

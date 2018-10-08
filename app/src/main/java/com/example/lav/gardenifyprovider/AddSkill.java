@@ -68,9 +68,9 @@ public class AddSkill extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         User user= new User();
                         user = dataSnapshot.getValue(User.class);
-                        user.addskills(skill+"|"+duration);
+                        user.addskills(skill+"@"+duration);
                         update(mdatabase,user);
-                        mdatabase2.push().setValue(name1+"|"+pricebox.getText().toString());
+                        mdatabase2.push().setValue(name1+"@"+pricebox.getText().toString());
 
                     }
 
