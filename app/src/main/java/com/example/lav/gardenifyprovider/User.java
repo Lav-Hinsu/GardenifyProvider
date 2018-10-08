@@ -43,11 +43,20 @@ public class User {
     public String getCity(){
         return city;
     }
+
     void addskills(String skill){
         skills.add(skill);
     }
 
     public ArrayList<String> getSkills() {
         return skills;
+    }
+
+    public ArrayList<String> getConfirmorder() {
+        return confirmorder;
+    }
+
+    public ArrayList<String> getPendingorder() {
+        return pendingorder;
     }
 }
