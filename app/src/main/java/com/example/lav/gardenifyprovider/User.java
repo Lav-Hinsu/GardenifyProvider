@@ -86,6 +86,16 @@ public class User {
     {
         declineorder.add(order);
     }
+    void setName(String name){
+        this.name=name;
+
+    }
+    void setAddress1(String address){
+        this.address1=address;
+    }
+    void setMobileno(String phoneno){
+        this.mobileno=phoneno;
+    }
 
 
 }

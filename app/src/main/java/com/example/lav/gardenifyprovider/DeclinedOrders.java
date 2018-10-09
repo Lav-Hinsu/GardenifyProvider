@@ -1,5 +1,6 @@
 package com.example.lav.gardenifyprovider;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
@@ -44,6 +45,24 @@ public class DeclinedOrders extends AppCompatActivity {
 
         city=sharedPreferences.getString(key2,"");
         name=sharedPreferences.getString(key,"");
+        try {
+
+            final ProgressDialog progDailog = ProgressDialog.show(this,
+                    "Please Wait",
+                    "Loading Data.....", true);
+            new Thread() {
+                public void run() {
+                    try {
+                        // sleep the thread, whatever time you want.
+                        sleep(3000);
+                    } catch (Exception e) {
+                    }
+                    progDailog.dismiss();
+                }
+            }.start();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(),"Something Went Wrong",Toast.LENGTH_SHORT).show();
+        }
 
         mdatabase2= FirebaseDatabase.getInstance().getReference().child(city.toUpperCase()).child("PROVIDER").child(name);
 

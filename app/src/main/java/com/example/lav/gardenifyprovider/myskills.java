@@ -1,5 +1,6 @@
 package com.example.lav.gardenifyprovider;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,6 +41,26 @@ public class myskills extends AppCompatActivity {
         String name=sharedPreferences.getString(key,"");
         String city=sharedPreferences.getString(key2,"");
         skillsview=findViewById(R.id.myskillsview);
+
+        try {
+
+            final ProgressDialog progDailog = ProgressDialog.show(this,
+                    "Please Wait",
+                    "Loading Data.....", true);
+            new Thread() {
+                public void run() {
+                    try {
+                        // sleep the thread, whatever time you want.
+                        sleep(3000);
+                    } catch (Exception e) {
+                    }
+                    progDailog.dismiss();
+                }
+            }.start();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(),"Something Went Wrong", Toast.LENGTH_SHORT).show();
+        }
+
         mdatabase=FirebaseDatabase.getInstance().getReference().child(city.toUpperCase()).child("PROVIDER").child(name);
 
 

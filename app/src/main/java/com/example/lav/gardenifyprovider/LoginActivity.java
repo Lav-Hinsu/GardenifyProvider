@@ -1,5 +1,6 @@
 package com.example.lav.gardenifyprovider;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -83,6 +84,24 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     Log.d("Value",""+e.getMessage());
                     Toast.makeText(getApplicationContext(),"Something went Wrong!",Toast.LENGTH_SHORT).show();
+                }
+                try {
+
+                    final ProgressDialog progDailog = ProgressDialog.show(getApplicationContext(),
+                            "Please Wait",
+                            "Loading Data.....", true);
+                    new Thread() {
+                        public void run() {
+                            try {
+                                // sleep the thread, whatever time you want.
+                                sleep(3000);
+                            } catch (Exception e) {
+                            }
+                            progDailog.dismiss();
+                        }
+                    }.start();
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(),"Something Went Wrong",Toast.LENGTH_SHORT).show();
                 }
 
             }

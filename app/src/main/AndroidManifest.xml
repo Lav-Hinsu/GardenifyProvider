@@ -29,7 +29,8 @@
         <activity android:name=".PendingOrders" />
         <activity android:name=".OrderConfirm" />
         <activity android:name=".ConfirmedOrders" />
-        <activity android:name=".DeclinedOrders"></activity>
+        <activity android:name=".DeclinedOrders" />
+        <activity android:name=".Settings"></activity>
     </application>
 
 </manifest>
