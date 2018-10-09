@@ -47,7 +47,6 @@ public class OrderConfirm extends AppCompatActivity {
 
         Bundle extras=getIntent().getExtras();
         order=extras.get("order").toString();
-        Log.d("gand",order);
 
         sharedPreferences=getSharedPreferences(myprefs, Context.MODE_PRIVATE);
         city=sharedPreferences.getString(key2,"");

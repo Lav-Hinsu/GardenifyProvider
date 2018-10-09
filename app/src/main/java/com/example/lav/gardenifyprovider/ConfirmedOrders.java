@@ -52,7 +52,7 @@ public class ConfirmedOrders extends AppCompatActivity {
                 User user= new User();
                 user=dataSnapshot.getValue(User.class);
                 confirmorders2=new ArrayList<String>();
-                confirmorders2=user.getPendingorder();
+                confirmorders2=user.getConfirmorder();
                 ArrayList<String > temp = new ArrayList<>();
                 for(int i=0;i<confirmorders2.size();i++)
                 {
