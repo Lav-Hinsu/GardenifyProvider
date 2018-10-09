@@ -3,34 +3,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+
         <!--<item
             android:id="@+id/Register"
             android:title="Register" />
         <item
             android:id="@+id/Login"
             android:title="Login" />-->
+    <group android:id="@+id/group1">
         <item
             android:id="@+id/myskills"
             android:title="My Skills" />
+    </group>
+    <group android:id="@+id/group2">
         <item
             android:id="@+id/pendingordersmenu"
             android:title="Pending Orders"/>
+    </group>
+    <group android:id="@+id/group3">
         <item
             android:id="@+id/confirmedordersmenu"
             android:title="Confirmed Orders"/>
+    </group>
+    <group android:id="@+id/group4">
         <item
             android:id="@+id/declinedordesmenu"
             android:title="Declined Orders"/>
+    </group>
+    <group android:id="@+id/group5">
         <item
             android:id="@+id/logout"
             android:title="Log Out"/>
+    </group>
         <!--<item
             android:id="@+id/nav_slideshow"
             android:title="Slideshow" />
         <item
             android:id="@+id/nav_manage"
             android:title="Tools" />-->
-    </group>
+
 
 </menu>
