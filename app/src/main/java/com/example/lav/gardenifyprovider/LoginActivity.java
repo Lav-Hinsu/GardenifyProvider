@@ -56,8 +56,8 @@ public class LoginActivity extends AppCompatActivity {
                             //String value = dataSnapshot.getValue(String.class);
                             User user=dataSnapshot.getValue(User.class);
                             Log.d("Value", "Name is: " + user.getName()+"Pass is:"+user.getPassword());
-                            if(!password.equals(""+user.getPassword())){
-                                Toast.makeText(getApplicationContext(),"Invalid Pass",Toast.LENGTH_SHORT).show();
+                            if(!password.equals(""+user.getPassword())&&namebox.length()==0&&city.length()==0){
+                                Toast.makeText(getApplicationContext(),"Incorrect details",Toast.LENGTH_SHORT).show();
                             }
                             else
                             {
