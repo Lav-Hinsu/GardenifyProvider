@@ -48,7 +48,7 @@
 
     <Button
         android:id="@+id/regbutton"
-        android:background="@color/limegreen"
+        android:background="@drawable/btn_bg_selector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"

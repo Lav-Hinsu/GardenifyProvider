@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="149" />
+                                                <entry key="scalingPercent" value="107" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -36,8 +36,8 @@
                                     <map>
                                       <entry key="backgroundLayerName" value="ic_launcher_background" />
                                       <entry key="foregroundImage" value="$USER_HOME$/Downloads/gardenify-logo-1.png" />
-                                      <entry key="foregroundLayerName" value="ic_main_activity" />
-                                      <entry key="outputName" value="ic_main_activity_image" />
+                                      <entry key="foregroundLayerName" value="ic_launch_activity" />
+                                      <entry key="outputName" value="ic_launch_activity_image" />
                                       <entry key="showSafeZone" value="false" />
                                     </map>
                                   </option>

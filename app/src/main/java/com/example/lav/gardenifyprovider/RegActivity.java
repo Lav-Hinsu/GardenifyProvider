@@ -46,7 +46,7 @@ public class RegActivity extends AppCompatActivity {
                 String address=address1.getText().toString();
                 String city= regcity.getText().toString();
                 String mobno=mobileno.getText().toString();
-                if(pass.equals(cpass))
+                if(pass.equals(cpass)&&name.length()!=0&&pass.length()!=0&&address.length()!=0&&city.length()!=0&& mobno.length()!=0)
                 {
                     SharedPreferences.Editor data=sharedPreferences.edit();
                     data.putString(key,name);
@@ -64,7 +64,7 @@ public class RegActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(),"Passwords do not match",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Incorret Details",Toast.LENGTH_SHORT).show();
                 }}
                 catch(Exception e)
                 {
