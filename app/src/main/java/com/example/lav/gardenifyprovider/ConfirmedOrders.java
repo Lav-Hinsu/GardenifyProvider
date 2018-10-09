@@ -29,7 +29,7 @@ public class ConfirmedOrders extends AppCompatActivity {
     final String key2="City";
     String city,name;
     DatabaseReference mdatabase2;
-    ArrayList<String> confirmorders2;
+    ArrayList<String> confirmorders2,temp[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,32 @@ public class ConfirmedOrders extends AppCompatActivity {
                 user=dataSnapshot.getValue(User.class);
                 confirmorders2=new ArrayList<String>();
                 confirmorders2=user.getPendingorder();
-                final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,confirmorders2);
+                ArrayList<String > temp = new ArrayList<>();
+                for(int i=0;i<confirmorders2.size();i++)
+                {
+                    String temp2[]=confirmorders2.get(i).split("@",-1);
+                    if(temp2.length==4){
+                        String name2=temp2[0];
+                        String cust2=temp2[1];
+                        String time=temp2[2];
+                        String price=temp2[3];
+                        String disp="Customer Name:"+cust2+" Price:"+price;
+                        temp.add(disp);
+
+                    }
+                    else if(temp2.length==5){
+                        String name2=temp2[0];
+                        String cust2=temp2[1];
+                        String time=temp2[2];
+                        String date2=temp2[3];
+                        String price=temp2[4];
+                        String disp="Customer Name:"+cust2+" Date"+date2+" Price:"+price;
+                        temp.add(disp);
+
+
+                    }
+                }
+                final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,temp);
                 confirmedorders.setAdapter(arrayAdapter);
             }
 

@@ -55,7 +55,32 @@ public class DeclinedOrders extends AppCompatActivity {
                 user=dataSnapshot.getValue(User.class);
                 declinedorders2=new ArrayList<String>();
                 declinedorders2=user.getDeclineorder();
-                final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,declinedorders2);
+                ArrayList<String > temp = new ArrayList<>();
+                for(int i=0;i<declinedorders2.size();i++)
+                {
+                    String temp2[]=declinedorders2.get(i).split("@",-1);
+                    if(temp2.length==4){
+                        String name2=temp2[0];
+                        String cust2=temp2[1];
+                        String time=temp2[2];
+                        String price=temp2[3];
+                        String disp="Customer Name:"+cust2+" Price:"+price;
+                        temp.add(disp);
+
+                    }
+                    else if(temp2.length==5){
+                        String name2=temp2[0];
+                        String cust2=temp2[1];
+                        String time=temp2[2];
+                        String date2=temp2[3];
+                        String price=temp2[4];
+                        String disp="Customer Name:"+cust2+" Date"+date2+" Price:"+price;
+                        temp.add(disp);
+
+
+                    }
+                }
+                final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,temp);
                 declinedorders.setAdapter(arrayAdapter);
             }
 

@@ -25,6 +25,7 @@
 
     <Button
         android:id="@+id/addskillbutton"
+        android:background="@color/limegreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="112dp"
@@ -47,8 +48,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Enter the Skill you want to add"
-        android:textSize="15dp"
+        android:text="Enter the service you want to add"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/addskill"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

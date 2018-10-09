@@ -53,7 +53,32 @@ public class PendingOrders extends AppCompatActivity {
                 user=dataSnapshot.getValue(User.class);
                 pendingorders2=new ArrayList<String>();
                 pendingorders2=user.getPendingorder();
-                final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,pendingorders2);
+                ArrayList<String > temp = new ArrayList<>();
+                for(int i=0;i<pendingorders2.size();i++)
+                {
+                    String temp2[]=pendingorders2.get(i).split("@",-1);
+                    if(temp2.length==4){
+                        String name2=temp2[0];
+                        String cust2=temp2[1];
+                        String time=temp2[2];
+                        String price=temp2[3];
+                        String disp="Customer Name:"+cust2+" Price:"+price;
+                        temp.add(disp);
+
+                    }
+                    else if(temp2.length==5){
+                        String name2=temp2[0];
+                        String cust2=temp2[1];
+                        String time=temp2[2];
+                        String date2=temp2[3];
+                        String price=temp2[4];
+                        String disp="Customer Name:"+cust2+" Date"+date2+" Price:"+price;
+                        temp.add(disp);
+
+
+                    }
+                }
+                final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,temp);
                 pendingorders.setAdapter(arrayAdapter);
             }
 
