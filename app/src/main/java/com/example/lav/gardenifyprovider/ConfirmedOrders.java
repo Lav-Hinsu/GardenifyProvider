@@ -35,7 +35,7 @@ public class ConfirmedOrders extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmed_orders);
-        setTitle("Pending Orders");
+        setTitle("Confirmed Orders");
 
         confirmedorders=findViewById(R.id.confirmedorders);
         sharedPreferences=getSharedPreferences(myprefs, Context.MODE_PRIVATE);

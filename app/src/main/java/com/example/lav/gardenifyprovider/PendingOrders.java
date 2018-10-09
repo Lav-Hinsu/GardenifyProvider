@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -54,6 +55,7 @@ public class PendingOrders extends AppCompatActivity {
                 user=dataSnapshot.getValue(User.class);
                 pendingorders2=new ArrayList<String>();
                 pendingorders2=user.getPendingorder();
+                Log.d("gand",""+pendingorders2);
                 ArrayList<String > temp = new ArrayList<>();
                 for(int i=0;i<pendingorders2.size();i++)
                 {
@@ -95,6 +97,7 @@ public class PendingOrders extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(getApplicationContext(),OrderConfirm.class);
+                Log.d("gand",pendingorders2.get(position));
                 intent.putExtra("order",""+pendingorders2.get(position));
                 startActivity(intent);
 

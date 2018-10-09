@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity
     final String myprefs="UserPrefs";
     final String key="Name";
     final String key2="City";
+
+    SharedPreferences sharedPreferences;
 
 
     @Override
@@ -40,8 +43,17 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        sharedPreferences=getSharedPreferences(myprefs,Context.MODE_PRIVATE);
+        String headername=sharedPreferences.getString(key,"");
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View hView=navigationView.getHeaderView(0);
+        TextView header=(TextView) hView.findViewById(R.id.header);
+        header.setText(headername);
+
+
     }
 
     @Override

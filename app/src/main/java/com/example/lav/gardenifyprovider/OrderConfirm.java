@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CursorTreeAdapter;
@@ -46,6 +47,7 @@ public class OrderConfirm extends AppCompatActivity {
 
         Bundle extras=getIntent().getExtras();
         order=extras.get("order").toString();
+        Log.d("gand",order);
 
         sharedPreferences=getSharedPreferences(myprefs, Context.MODE_PRIVATE);
         city=sharedPreferences.getString(key2,"");
