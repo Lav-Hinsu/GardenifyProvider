@@ -34,6 +34,7 @@ public class myskills extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myskills);
+        setTitle("My Services");
         sharedPreferences=getSharedPreferences(myprefs, Context.MODE_PRIVATE);
         String name=sharedPreferences.getString(key,"");
         String city=sharedPreferences.getString(key2,"");

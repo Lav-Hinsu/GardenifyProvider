@@ -38,6 +38,7 @@ public class OrderConfirm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_confirm);
+        setTitle("Confirm Order");
 
         orderinfo=findViewById(R.id.orderinfo);
         confirm=findViewById(R.id.confirm);

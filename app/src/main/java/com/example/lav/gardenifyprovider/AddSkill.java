@@ -41,6 +41,7 @@ public class AddSkill extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_skill);
+        setTitle("Add Services");
         duration= findViewById(R.id.radioduration);
         addbutton= findViewById(R.id.addskillbutton);
         skillentry= findViewById(R.id.addskill);

@@ -37,6 +37,7 @@ public class PendingOrders extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pending_orders);
+        setTitle("Pending Orders");
 
         sharedPreferences=getSharedPreferences(myprefs, Context.MODE_PRIVATE);
 
