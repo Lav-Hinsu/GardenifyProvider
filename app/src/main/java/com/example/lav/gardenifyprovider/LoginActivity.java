@@ -76,7 +76,6 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onCancelled(DatabaseError error) {
                             // Failed to read value
-                            Log.w("Value", "Failed to read value.", error.toException());
                             Toast.makeText(getApplicationContext(),"Check Your Internet Connection",Toast.LENGTH_SHORT).show();
                         }
                     });
